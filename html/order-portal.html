@@ -13,21 +13,76 @@
     <header>
         <span><strong><a href="../index.html">Mama Cha Pizza</a></strong></span>
         <span>420-69-6969</span>
-        <div class="logo-img"><a href="../index.html"><img src="../assets/images/pizza_logo.png" alt="logo-img" width="200px"
-                    height="126px"></a></div>
+        <div class="logo-img"><a href="../index.html"><img src="../assets/images/pizza_logo.png" alt="logo-img"
+                    width="200px" height="126px"></a></div>
     </header>
 
-    
+    <form class="personalDetails">
+        <section class="input-personal">
+            <input type="text" name="name" placeholder="Name" required><br>
+            <input type="text" name="number" placeholder="Number" minlength="8" maxlength="10" required><br>
+        </section>
+    </form>
+    <br>
+
+    <section class="input-order">
+        <h4>Add your orders to the menu:</h4>
+        <form class="cartAdder">
+            <select name="pizza-category" class="chooser-type">
+                <option value="classic">Classic</option>
+                <option value="supreme">Supreme</option>
+                <option value="cheeseburst">Cheese Burst</option>
+                <option value="combos">Combos</option>
+                <option value="partyPacks">Party Packs</option>
+                <option value="cheesyDips">Cheesy Dips</option>
+                <option value="sides">SIdes</option>
+                <option value="desserts">Desserts</option>
+            </select>
+            <br>
+
+            <select name="pizza-model" class="chooser-model">
+                <option value="sasta">"Mai Gareeb hu" Pizza</option>
+                <option value="verySasta">"Bahut Gareeb hu" Pizza</option>
+                <option value="pricey">"Mera naam Ambani" Pizza</option>
+            </select>
+            <br>
+
+            <select name="pizza-size" class="chooser-size">
+                <option value="regular">Regular (Feeds 1)</option>
+                <option value="medium">Medium (Feeds 2)</option>
+                <option value="large">Large (Feeds 4)</option>
+                <option value="vBig">World Record Size (Feeds all of Africa)</option>
+            </select>
+            <br>
+
+            <input type="checkbox" name="Pepperoni">Pepperoni <br>
+            <input type="checkbox" name="Mushrooms">Mushrooms <br>
+            <input type="checkbox" name="Onions">Onions <br>
+            <input type="checkbox" name="Sausage">Sausage <br>
+            <input type="checkbox" name="Extra cheese">Extra cheese <br>
+            <input type="checkbox" name="Black olives">Black olives <br>
+            <input type="checkbox" name="Green peppers">Green peppers <br>
+            <input type="checkbox" name="Spinach">Spinach <br>
+
+            <button type="button">Add to Cart</button>
+        </form>
+    </section>
+    <br>
+
+    <section class="input-address">
+        <form class="addressDetails"></form>
+
+    </section>
 
     <footer>
-            <nav>
-                <span><a href="about-us.html">Our Story </a>|</span>
-                <span><a href="privacy-policy.html">Privacy Policy </a>|</span>
-                <span><a href="terms-conditions.html">Terms and Conditions </a>|</span>
-                <span><a href="#">Order Pizza online</a></span>
-            </nav>
-            <h6>2019 @ Mama cha Pizza. No rights reserved</h6>
-        </footer>
+        <nav>
+            <span><a href="about-us.html">Our Story </a>|</span>
+            <span><a href="privacy-policy.html">Privacy Policy </a>|</span>
+            <span><a href="terms-conditions.html">Terms and Conditions </a>|</span>
+            <span><a href="#">Order Pizza online</a></span>
+        </nav>
+        <h6>2019 @ Mama cha Pizza. No rights reserved</h6>
+    </footer>
 
 
 </body>
