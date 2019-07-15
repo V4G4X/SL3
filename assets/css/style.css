@@ -1,4 +1,23 @@
-.logo-img {
-    background-image: url(../images/pizza_logo.png);
-    background-size: cover;
+header,
+{}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.page-title {
+    float: left;
+    font-family: monospace;
+    font-size: 300%;
+}
+
+.page-number {
+    float: right;
+    font-family: monospace;
+    font-size: 200%;
+}
+
+.category-title {
+    font-size: 140%;
 }
