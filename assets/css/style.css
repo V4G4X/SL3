@@ -6,6 +6,28 @@ a {
     color: black;
 }
 
+.navbar {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: inherit;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 15px 25px;
+}
+
+.navbar-active {
+    background-color: green;
+}
+
+.navbar a {
+    color: white;
+}
+
 .page-title {
     float: left;
     font-family: monospace;
@@ -13,9 +35,12 @@ a {
 }
 
 .page-number {
+    border-style: solid;
+    color: green;
     float: right;
     font-family: monospace;
     font-size: 200%;
+    padding: 5px;
 }
 
 .category-title {

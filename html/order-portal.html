@@ -7,17 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../assets/css/layout.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            width: 250px;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown :hover {
+            background-color: #ddd;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+
 </head>
 
 <body>
     <header>
-        <span><strong><a href="#">Mama Cha Pizza</a></strong></span>
-        <span>420-69-6969</span>
-        <a href="../index.html">
-            <div class="logo-img"> </div>
+        <span class="page-title"><strong><a href="../index.html">Mama Cha Pizza</a></strong></span>
+        <a href="../index.html" class="logo-img-link">
+            <img src="../assets/images/pizza_logo.png" alt="Logo" height="60px" width="95px" class="logo-img">
         </a>
-        <h3>Now with Bhakarwadi toppings!</h3>
+        <span class="page-number">420-69-6969</span>
     </header>
+
+    <ul class="navbar">
+        <li><a href="../index.html">Home </a></li>
+        <li><a href="about-us.html">Our Story </a></li>
+        <li><a href="privacy-policy.html">Privacy Policy </a></li>
+        <li><a href="terms-conditions.html">Terms and Conditions </a></li>
+        <li class="navbar-active"><a href="order-portal.html">Order Pizza Online</a></li>
+    </ul>
 
     <form class="personalDetails">
         <section class="input-personal">
@@ -30,31 +61,37 @@
     <section class="input-order">
         <h4>Add your orders to the menu:</h4>
         <form class="cartAdder">
-            <select name="pizza-category" class="chooser-type">
-                <option value="classic">Classic</option>
-                <option value="supreme">Supreme</option>
-                <option value="cheeseburst">Cheese Burst</option>
-                <option value="combos">Combos</option>
-                <option value="partyPacks">Party Packs</option>
-                <option value="cheesyDips">Cheesy Dips</option>
-                <option value="sides">Sides</option>
-                <option value="desserts">Desserts</option>
-            </select>
-            <br>
+            <div class="dropdown">
+                <select name="pizza-category" class="dropbtn">
+                    <option value="classic">Classic</option>
+                    <option value="supreme">Supreme</option>
+                    <option value="cheeseburst">Cheese Burst</option>
+                    <option value="combos">Combos</option>
+                    <option value="partyPacks">Party Packs</option>
+                    <option value="cheesyDips">Cheesy Dips</option>
+                    <option value="sides">Sides</option>
+                    <option value="desserts">Desserts</option>
+                </select>
+                <br>
+                <br>
 
-            <select name="pizza-model" class="chooser-model">
-                <option value="sasta">"Mai Gareeb hu" Pizza</option>
-                <option value="verySasta">"Bahut Gareeb hu" Pizza</option>
-                <option value="pricey">"Mera naam Ambani" Pizza</option>
-            </select>
-            <br>
+                <select name="pizza-model" class="dropbtn">
+                    <option value="sasta">"Mai Gareeb hu" Pizza</option>
+                    <option value="verySasta">"Bahut Gareeb hu" Pizza</option>
+                    <option value="pricey">"Mera naam Ambani" Pizza</option>
+                </select>
+                <br>
+                <br>
 
-            <select name="pizza-size" class="chooser-size">
-                <option value="regular">Regular (Feeds 1)</option>
-                <option value="medium">Medium (Feeds 2)</option>
-                <option value="large">Large (Feeds 4)</option>
-                <option value="vBig">World Record Size (Feeds all of Africa)</option>
-            </select>
+                <select name="pizza-size" class="dropbtn">
+                    <option value="regular">Regular (Feeds 1)</option>
+                    <option value="medium">Medium (Feeds 2)</option>
+                    <option value="large">Large (Feeds 4)</option>
+                    <option value="vBig">World Record Size (Feeds all of Africa)</option>
+                </select>
+                <br>
+            </div>
+            <br>
             <br>
 
             <input type="checkbox" name="Pepperoni">Pepperoni <br>
@@ -90,5 +127,3 @@
 
 
 </body>
-
-</html>
