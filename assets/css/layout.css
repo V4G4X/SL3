@@ -1,15 +1,22 @@
 body,
 a,
-h3 {
+h3,
+h5 {
     margin: 0;
 }
 
 header {
-    background-color: #adadad;
-    height: 100px;
-    margin: 0 0px;
-    padding: 0 15px;
+    background-color: grey;
+    text-align: center;
+    height: 100%;
+    padding: 10px 15px;
     max-height: 150px;
+}
+
+.text-container {
+    max-width: 90%;
+    margin: auto;
+    padding: 10px 0;
 }
 
 .banner-container figure {
@@ -59,21 +66,19 @@ header {
 }
 
 .page-title {
-    padding-top: 15px;
+    padding-top: 35px;
 }
 
 .page-number {
     border-width: 2px;
-    margin-top: 25px;
+    margin-right: 1%;
 }
 
 .logo-img {
-    display: inline-block;
     max-width: 200px;
     padding-top: 7.5px;
 }
 
 .logo-img-link {
-    display: inline-block;
-    margin-left: 18%;
+    margin-left: -8%;
 }

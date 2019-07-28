@@ -1,9 +1,12 @@
-header,
-{}
-
 a {
     text-decoration: none;
     color: black;
+}
+
+footer {
+    height: 100%;
+    background-color: black;
+    text-align: center;
 }
 
 .navbar {
@@ -12,7 +15,7 @@ a {
     justify-content: center;
     list-style: none;
     margin: 0;
-    padding: inherit;
+    /* padding: inherit; */
 }
 
 .navbar li {
@@ -39,7 +42,7 @@ a {
     color: green;
     float: right;
     font-family: monospace;
-    font-size: 200%;
+    font-size: 250%;
     padding: 5px;
 }
 

@@ -35,13 +35,21 @@
 
 <body>
     <header>
-        <span class="page-title"><strong><a href="../index.html">Mama Cha Pizza</a></strong></span>
-        <a href="../index.html" class="logo-img-link">
-            <img src="../assets/images/pizza_logo.png" alt="Logo" height="60px" width="95px" class="logo-img">
-        </a>
-        <span class="page-number">420-69-6969</span>
+        <span>
+            <strong><a class="page-title" href="../index.html">Mama Cha Pizza</a></strong></<strong>
+        </span>
+        <span>
+            <a href="../index.html" class="logo-img-link">
+                <img src="../assets/images/pizza_logo.png" alt="Logo" height="7%" width="7%" class="logo-img">
+            </a>
+        </span>
+        <span>
+            <p class="page-number">
+                420-69-6969
+            </p>
+        </span>
+        <br><br>
     </header>
-
     <ul class="navbar">
         <li><a href="../index.html">Home </a></li>
         <li><a href="about-us.html">Our Story </a></li>
@@ -49,81 +57,85 @@
         <li><a href="terms-conditions.html">Terms and Conditions </a></li>
         <li class="navbar-active"><a href="order-portal.html">Order Pizza Online</a></li>
     </ul>
+    <section class="text-container">
+        <form class="personalDetails">
+            <section class="input-personal">
+                <input type="text" name="name" placeholder="Name" required><br>
+                <input type="text" name="number" placeholder="Number" minlength="8" maxlength="10" required><br>
+            </section>
+        </form>
+        <br>
 
-    <form class="personalDetails">
-        <section class="input-personal">
-            <input type="text" name="name" placeholder="Name" required><br>
-            <input type="text" name="number" placeholder="Number" minlength="8" maxlength="10" required><br>
+        <section class="input-order">
+            <h4>Add your orders to the menu:</h4>
+            <form class="cartAdder">
+                <div class="dropdown">
+                    <select name="pizza-category" class="dropbtn">
+                        <option value="classic">Classic</option>
+                        <option value="supreme">Supreme</option>
+                        <option value="cheeseburst">Cheese Burst</option>
+                        <option value="combos">Combos</option>
+                        <option value="partyPacks">Party Packs</option>
+                        <option value="cheesyDips">Cheesy Dips</option>
+                        <option value="sides">Sides</option>
+                        <option value="desserts">Desserts</option>
+
+                    </select>
+
+                    <br>
+
+                    <br>
+
+                    <select name="pizza-model" class="dropbtn">
+                        <option value="sasta">"Mai Gareeb hu" Pizza</option>
+                        <option value="verySasta">"Bahut Gareeb hu" Pizza</option>
+                        <option value="pricey">"Mera naam Ambani" Pizza</option>
+                    </select>
+                    <br>
+                    <br>
+
+                    <select name="pizza-size" class="dropbtn">
+                        <option value="regular">Regular (Feeds 1)</option>
+                        <option value="medium">Medium (Feeds 2)</option>
+                        <option value="large">Large (Feeds 4)</option>
+                        <option value="vBig">World Record Size (Feeds all of Africa)</option>
+                    </select>
+                    <br>
+                </div>
+                <br>
+                <br>
+
+                <input type="checkbox" name="Pepperoni">Pepperoni <br>
+                <input type="checkbox" name="Mushrooms">Mushrooms <br>
+                <input type="checkbox" name="Onions">Onions <br>
+                <input type="checkbox" name="Sausage">Sausage <br>
+                <input type="checkbox" name="Extra cheese">Extra cheese <br>
+                <input type="checkbox" name="Black olives">Black olives <br>
+                <input type="checkbox" name="Green peppers">Green peppers <br>
+                <input type="checkbox" name="Spinach">Spinach <br>
+                <br>
+                <button type="button">Add to Cart</button>
+            </form>
         </section>
-    </form>
-    <br>
+        <br>
 
-    <section class="input-order">
-        <h4>Add your orders to the menu:</h4>
-        <form class="cartAdder">
-            <div class="dropdown">
-                <select name="pizza-category" class="dropbtn">
-                    <option value="classic">Classic</option>
-                    <option value="supreme">Supreme</option>
-                    <option value="cheeseburst">Cheese Burst</option>
-                    <option value="combos">Combos</option>
-                    <option value="partyPacks">Party Packs</option>
-                    <option value="cheesyDips">Cheesy Dips</option>
-                    <option value="sides">Sides</option>
-                    <option value="desserts">Desserts</option>
-                </select>
-                <br>
-                <br>
-
-                <select name="pizza-model" class="dropbtn">
-                    <option value="sasta">"Mai Gareeb hu" Pizza</option>
-                    <option value="verySasta">"Bahut Gareeb hu" Pizza</option>
-                    <option value="pricey">"Mera naam Ambani" Pizza</option>
-                </select>
-                <br>
-                <br>
-
-                <select name="pizza-size" class="dropbtn">
-                    <option value="regular">Regular (Feeds 1)</option>
-                    <option value="medium">Medium (Feeds 2)</option>
-                    <option value="large">Large (Feeds 4)</option>
-                    <option value="vBig">World Record Size (Feeds all of Africa)</option>
-                </select>
-                <br>
-            </div>
-            <br>
-            <br>
-
-            <input type="checkbox" name="Pepperoni">Pepperoni <br>
-            <input type="checkbox" name="Mushrooms">Mushrooms <br>
-            <input type="checkbox" name="Onions">Onions <br>
-            <input type="checkbox" name="Sausage">Sausage <br>
-            <input type="checkbox" name="Extra cheese">Extra cheese <br>
-            <input type="checkbox" name="Black olives">Black olives <br>
-            <input type="checkbox" name="Green peppers">Green peppers <br>
-            <input type="checkbox" name="Spinach">Spinach <br>
-
-            <button type="button">Add to Cart</button>
-        </form>
+        <section class="input-address">
+            <form class="addressDetails">
+                <input type="radio" name="delivery" value="pickup">Pickup<br>
+                <input type="radio" name="delivery" value="delivery">Delivery<br>
+            </form>
+        </section>
     </section>
-    <br>
 
-    <section class="input-address">
-        <form class="addressDetails">
-            <input type="radio" name="delivery" value="pickup">Pickup<br>
-            <input type="radio" name="delivery" value="delivery">Delivery<br>
-        </form>
-    </section>
 
     <footer>
-        <nav>
-            <span><a href="about-us.html">Our Story </a>|</span>
-            <span><a href="privacy-policy.html">Privacy Policy </a>|</span>
-            <span><a href="terms-conditions.html">Terms and Conditions </a>|</span>
-            <span><a href="#">Order Pizza online</a></span>
-        </nav>
-        <h6>2019 @ Mama cha Pizza. No rights reserved</h6>
+        <ul class="navbar">
+            <li><a href="../index.html">Home </a></li>
+            <li><a href="../html/about-us.html">Our Story </a></li>
+            <li><a href="../html/privacy-policy.html">Privacy Policy </a></li>
+            <li><a href="../html/terms-conditions.html">Terms and Conditions </a></li>
+            <li class="navbar-active"><a href="../html/order-portal.html">Order Pizza online</a></li>
+        </ul>
+        <h5 style="color: white">2019 @ Mama cha Pizza. No rights reserved</h5>
     </footer>
-
-
 </body>
