@@ -16,16 +16,16 @@
             border: none;
             width: 250px;
         }
-        
+
         .dropdown {
             position: relative;
             display: inline-block;
         }
-        
+
         .dropdown :hover {
             background-color: #ddd;
         }
-        
+
         .dropdown:hover .dropbtn {
             background-color: #3e8e41;
         }
@@ -59,16 +59,48 @@
     </ul>
     <section class="text-container">
         <form class="personalDetails">
-            <section class="input-personal">
-                <input type="text" name="name" placeholder="Name" required><br>
-                <input type="text" name="number" placeholder="Number" minlength="8" maxlength="10" required><br>
-            </section>
+            <br>
+            <fieldset class="input-personal">
+                <legend>Enter Contact Details</legend>
+                
+                <label for="fName">First Name: </label>
+                <input type="text" name="fName" class="fName" placeholder="First Name" required>
+                <label for="lName">Last Name: </label>
+                <input type="text" name="lName" class="lName" placeholder="Last Name" required>
+                <br>
+                
+                <br>
+                <label for="number">Phone Number: </label>
+                <input type="number" name="number" class="number" placeholder="Number" minlength="8" maxlength="10" required>
+                <br>
+                
+                <br>
+                <label for="email">Email ID: </label>
+                <input type="email" name="emailId" class="email" placeholder="Email ID" required>
+                <br>
+
+                <br>
+                <label for="dob">Enter Birthdate(For a Special Surprise on your BDay): </label>
+                <input type="date" name="dob" class="dob">
+                <br>
+
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Create Password</legend>
+                <label for="enterPassword">Enter Password</label>
+                <input type="password" name="Enter Password" class="enterPassword" placeholder="Enter Password" /><br>
+                <br>
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="Confirm Password" class="confirmPassword" placeholder="Confirm Password" />
+                <br>
+            </fieldset>
         </form>
         <br>
 
-        <section class="input-order">
-            <h4>Add your orders to the menu:</h4>
-            <form class="cartAdder">
+        <form class="cartAdder">
+            <fieldset class="input-order">
+                <legend>Add your orders to the menu:</legend>
                 <div class="dropdown">
                     <select name="pizza-category" class="dropbtn">
                         <option value="classic">Classic</option>
@@ -115,16 +147,27 @@
                 <input type="checkbox" name="Spinach">Spinach <br>
                 <br>
                 <button type="button">Add to Cart</button>
-            </form>
-        </section>
+            </fieldset>
+        </form>
         <br>
 
-        <section class="input-address">
-            <form class="addressDetails">
+        <form class="addressDetails">
+            <fieldset class="input-address">
+                <legend>Address Details</legend>
+                <label for="address">Address: </label>
+                <input type="test" name="Address" class="address" placeholder="Address"/>
+                <label for="pincode">Pin Code: </label>
+                <input type="number" name="pincode" class="pincode" placeholder="Pin Code" minlength="6" maxlength="6"/>
+                <br>
+                <label for="city">City: </label>
+                <input type="text" name="city" placeholder="City"/>
+                <label for="state">Address: </label>
+                <input type="text" name="State" class="state" placeholder="State"/><br>
+                <br>
                 <input type="radio" name="delivery" value="pickup">Pickup<br>
                 <input type="radio" name="delivery" value="delivery">Delivery<br>
-            </form>
-        </section>
+            </fieldset>
+        </form>
     </section>
 
 
