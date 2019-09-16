@@ -60,7 +60,7 @@
         <li class="navbar-active"><a href="order-portal.html">Order Pizza Online</a></li>
     </ul>
     <section class="text-container">
-        <form name="personalDetails" action="../assets/php/detailform.php" onsubmit="return validate()" method="POST">
+        <form name="personalDetails" action="../assets/php/detailform.php" method="POST">
             <br>
             <fieldset class="input-personal">
                 <legend>Enter Contact Details</legend>
@@ -73,12 +73,17 @@
 
                 <br>
                 <label for="number">Phone Number: </label>
-                <input type="tel" name="number" class="number" placeholder="Number" minlength="8" maxlength="10">
+                <input type="text" name="number" class="number" placeholder="Number" minlength="8" maxlength="10">
                 <br>
 
                 <br>
+                <label for="url">Website: </label>
+                <input type="text" name="url" placeholder="Website">
+                <br>
+                
+                <br>
                 <label for="email">Email ID: </label>
-                <input type="email" name="emailId" class="email" placeholder="Email ID" >
+                <input type="text" name="emailId" class="email" placeholder="Email ID" >
                 <br>
 
                 <br>
