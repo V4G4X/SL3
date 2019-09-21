@@ -18,16 +18,16 @@
             border: none;
             width: 250px;
         }
-        
+
         .dropdown {
             position: relative;
             display: inline-block;
         }
-        
+
         .dropdown :hover {
             background-color: #ddd;
         }
-        
+
         .dropdown:hover .dropbtn {
             background-color: #3e8e41;
         }
@@ -42,7 +42,7 @@
         </span>
         <span>
             <a href="../index.html" class="logo-img-link">
-                <img src="../assets/images/pizza_logo.png" alt="Logo" height="7%" width="7%" class="logo-img">
+                <img src="../assets/images/pizza_logo.png" alt="Logo" height="10%" width="10%" class="logo-img">
             </a>
         </span>
         <span>
@@ -60,30 +60,36 @@
         <li class="navbar-active"><a href="order-portal.html">Order Pizza Online</a></li>
     </ul>
     <section class="text-container">
-        <form name="personalDetails" action="../assets/php/detailform.php" method="POST">
+        <form name="personalDetails" action="../assets/php/detailform.php" method="POST" onsubmit=" return validate();">
             <br>
             <fieldset class="input-personal">
                 <legend>Enter Contact Details</legend>
 
                 <label for="fName">First Name: </label>
-                <input type="text" name="fName"  placeholder="First Name">
+                <input type="text" name="fName" placeholder="First Name">
+                <span class="required">*</span>
+                <br>
+                <br>
                 <label for="lName">Last Name: </label>
-                <input type="text" name="lName" class="lName" placeholder="Last Name" >
+                <input type="text" name="lName" class="lName" placeholder="Last Name">
+                <span class="required">*</span>
                 <br>
 
                 <br>
                 <label for="number">Phone Number: </label>
                 <input type="text" name="number" class="number" placeholder="Number" minlength="8" maxlength="10">
+                <span class="required">*</span>
                 <br>
 
                 <br>
                 <label for="url">Website: </label>
                 <input type="text" name="url" placeholder="Website">
                 <br>
-                
+
                 <br>
                 <label for="email">Email ID: </label>
-                <input type="text" name="emailId" class="email" placeholder="Email ID" >
+                <input type="text" name="emailId" class="email" placeholder="Email ID">
+                <span class="required">*</span>
                 <br>
 
                 <br>
@@ -92,7 +98,7 @@
                 <br>
 
                 <br>
-                <input type="submit" name="submit" value="Submit" >
+                <input type="submit" name="submit" value="Submit">
             </fieldset>
             <br>
             <!-- <fieldset>
@@ -166,7 +172,8 @@
                 <label for="address">Address: </label>
                 <input type="test" name="Address" class="address" placeholder="Address" />
                 <label for="pincode">Pin Code: </label>
-                <input type="number" name="pincode" class="pincode" placeholder="Pin Code" minlength="6" maxlength="6" />
+                <input type="number" name="pincode" class="pincode" placeholder="Pin Code" minlength="6"
+                    maxlength="6" />
                 <br>
                 <label for="city">City: </label>
                 <input type="text" name="city" placeholder="City" />
