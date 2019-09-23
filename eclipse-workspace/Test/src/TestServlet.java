@@ -1,7 +1,9 @@
 
 
 import java.io.IOException;
+import java.sql.PreparedStatement; 
 import java.io.PrintWriter;
+import java.sql.Connection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,20 +11,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 /**
  * Servlet implementation class TestServlet
  */
 @WebServlet("/TestServlet")
 public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TestServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public TestServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,10 +43,23 @@ public class TestServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		PrintWriter out = response.getWriter();
-		if (username.isEmpty()) 
+		if (username.isEmpty())
 			out.println("Empty Username Field");
-		if (password.isEmpty()) 
+		if (password.isEmpty())
 			out.println("Empty Password Field");
+		if(!username.isEmpty() && !password.isEmpty()) {
+			try {
+				Connection con = DatabaseConnection.initializeDatabase();
+				PreparedStatement st = con.prepareStatement("INSERT INTO User(name) VALUES(?)");
+				st.setString(1, username);
+				st.execute();
+				st.close();
+				con.close();
+				out.println("Wrote into DB(FUCK YEAHHH!!!)");
+			} catch (Exception e) {
+				e.printStackTrace(); 
+			}
+		}
 		doGet(request, response);
 	}
 

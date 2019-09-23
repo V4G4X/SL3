@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Login Page</title>
-<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/CSS/style.css" rel="stylesheet">
 </head>
 <body>
 	<form name="login" method="POST" action="TestServlet">
