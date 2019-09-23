@@ -21,7 +21,10 @@
 					<td><input type="password" name="password"></td>
 				</tr> 
 			</table>
-			<button type="submit">Submit</button>
+			<section class="center">
+				<button type="submit">Submit</button>
+				<button type="reset">Reset</button>
+			</section>
 		</fieldset>
 	</form>
 </body>
