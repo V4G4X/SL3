@@ -1,28 +1,23 @@
-
+package com.SL3;
 
 import java.io.IOException;
-import java.sql.PreparedStatement; 
-import java.io.PrintWriter;
-import java.sql.Connection;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
- * Servlet implementation class TestServlet
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/TestServlet")
-public class TestServlet extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public TestServlet() {
+	public LoginServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -39,28 +34,22 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		PrintWriter out = response.getWriter();
-		if (username.isEmpty())
-			out.println("Empty Username Field");
-		if (password.isEmpty())
-			out.println("Empty Password Field");
-		if(!username.isEmpty() && !password.isEmpty()) {
-			try {
-				Connection con = DatabaseConnection.initializeDatabase();
-				PreparedStatement st = con.prepareStatement("INSERT INTO User(name) VALUES(?)");
-				st.setString(1, username);
-				st.execute();
-				st.close();
-				con.close();
-				out.println("Wrote into DB(FUCK YEAHHH!!!)");
-			} catch (Exception e) {
-				e.printStackTrace(); 
+		if(username.isEmpty() || password.isEmpty()) {
+			System.out.println("Username Empty");
+			request.setAttribute("userError", "Please Enter Username");
+			if(password.isEmpty()) {
+				System.out.println("Password Empty");
+				request.setAttribute("passError", "Please Enter Password");
+				request.getRequestDispatcher("Index.jsp").forward(request, response);
+				return;
 			}
+			request.getRequestDispatcher("Index.jsp").forward(request, response);
+			return;
 		}
-		doGet(request, response);
+		request.setAttribute("username", username);
+		request.getRequestDispatcher("Profile.jsp").forward(request, response);
+		return;
 	}
-
 }
