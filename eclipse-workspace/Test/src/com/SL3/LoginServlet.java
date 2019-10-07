@@ -1,6 +1,10 @@
 package com.SL3;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,7 +39,9 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
+		username = username.trim();
 		String password = request.getParameter("password");
+		password = password.trim();
 		if(username.isEmpty() || password.isEmpty()) {
 			System.out.println("Username Empty");
 			request.setAttribute("userError", "Please Enter Username");
@@ -48,8 +54,34 @@ public class LoginServlet extends HttpServlet {
 			request.getRequestDispatcher("Index.jsp").forward(request, response);
 			return;
 		}
-		request.setAttribute("username", username);
-		request.getRequestDispatcher("Profile.jsp").forward(request, response);
-		return;
+		try {
+			Connection con = DatabaseConnection.initializeDatabase();
+			PreparedStatement st = con.prepareStatement("SELECT `password` FROM Login WHERE `username` LIKE ?");
+			st.setString(1, username);
+			ResultSet rs = st.executeQuery();
+			if(!rs.next()) {
+				System.out.println("Username not Found");
+				request.setAttribute("userError", "Please Enter Valid Username");
+				request.getRequestDispatcher("Index.jsp").forward(request, response);
+				return;
+			}else {
+				String recPass = rs. getString("password");
+				if (recPass.compareTo(password)==0) {//Passwords Match
+					request.setAttribute("username", username);
+					request.getRequestDispatcher("Profile.jsp").forward(request, response);
+					return;
+				}
+				else {
+					System.out.println("Password Incorrect");
+					request.setAttribute("passError", "Please Enter Correct Password");
+					request.getRequestDispatcher("Index.jsp").forward(request, response);
+					return;
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("Okay some Exception Caught in LoginServlet Block ");
+			e.printStackTrace();
+		}
+		doGet(request, response);
 	}
 }

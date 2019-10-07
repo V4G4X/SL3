@@ -7,16 +7,16 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="assets/CSS/bootstrap.min.css" rel="stylesheet">
-<title>Insert title here</title>
+<title>Profile</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-		<ul class="navbar-nav" style="padding-left: 10%">
+		<ul class="navbar-nav" style="padding-left: 5%">
 			<li class="mav-item"><a class="nav-link" href="#">Home</a></li>
 			<li class="mav-item"><a class="nav-link" href="#">About Us</a></li>
 			<li class="mav-item"><a class="nav-link" href="#">Contact</a></li>
 		</ul>
-		<form class="form-inline" style="padding-left: 45%;">
+		<form class="form-inline" style="padding-left: 35%;">
 			<input type="text" class="form-control mr-sm-2" placeholder="Search">
 			<button type="button" class="btn btn-success">Search</button>
 		</form>
