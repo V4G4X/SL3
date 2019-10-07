@@ -32,7 +32,64 @@
             background-color: #3e8e41;
         }
     </style>
+    <?php
+        // echo "Current php Script is: ";
+        // echo htmlspecialchars($_SERVER["PHP_SELF"]);
+        $fName = $lName = $phone = $email = $website = "";
+        $fNameErr = $lNameErr = $phoneErr = $emailErr = $websiteErr = $urlHeader = " ";
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            $fName = test_input($_POST["fName"]);
+            if (empty($fName)) {
+                $fNameErr = "Empty First Name Field ";
+            }
 
+            $lName = test_input($_POST["lName"]);
+            if (empty($lName)) {
+                $lNameErr = "Empty last Name Field ";
+            }
+
+            $phone = test_input($_POST["number"]);
+            if(!is_numeric($phone)){
+                $phoneErr="Invalid Phone Number ";
+                if (empty($phone)) {
+                    $phoneErr = "Empty Phone Number Field ";
+                }
+            }
+
+            $email = test_input($_POST["emailId"]);
+            if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid Email Format ";
+            }
+            if (empty($email)) {
+                $emailErr = "Empty Email Field ";
+            }
+
+            $website = test_input($_POST["url"]);
+            if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+                $websiteErr = "Invalid URL Format ";
+                if (empty($website)) {
+                    $websiteErr = "Empty URL Field ";
+                }
+            }
+            else {
+                $urlHeader = @get_headers($website);
+                if (!$urlHeader || strpos($urlHeader[0],"404")) {
+                    $websiteErr = "URL doesn't Exist ";
+                } else {
+                    $websiteErr = "URL Exists ";
+                }
+                
+            }
+
+        }
+        function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+
+    ?>
 </head>
 
 <body>
@@ -57,39 +114,40 @@
         <li><a href="about-us.html">Our Story </a></li>
         <li><a href="privacy-policy.html">Privacy Policy </a></li>
         <li><a href="terms-conditions.html">Terms and Conditions </a></li>
-        <li class="navbar-active"><a href="order-portal.html">Order Pizza Online</a></li>
+        <li class="navbar-active"><a href="order-portal.php">Order Pizza Online</a></li>
     </ul>
     <section class="text-container">
-        <form name="personalDetails" action="../assets/php/detailform.php" method="POST" onsubmit=" return validate();">
+        <form name="personalDetails" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" onsubmit="//return validate();">
             <br>
             <fieldset class="input-personal">
                 <legend>Enter Contact Details</legend>
 
                 <label for="fName">First Name: </label>
                 <input type="text" name="fName" placeholder="First Name">
-                <span class="required">*</span>
+                <span class="required">*<?php echo $fNameErr?></span>
                 <br>
                 <br>
                 <label for="lName">Last Name: </label>
                 <input type="text" name="lName" class="lName" placeholder="Last Name">
-                <span class="required">*</span>
+                <span class="required">*<?php echo $lNameErr?></span>
                 <br>
 
                 <br>
                 <label for="number">Phone Number: </label>
                 <input type="text" name="number" class="number" placeholder="Number" minlength="8" maxlength="10">
-                <span class="required">*</span>
+                <span class="required">*<?php echo $phoneErr?></span>
                 <br>
 
                 <br>
                 <label for="url">Website: </label>
                 <input type="text" name="url" placeholder="Website">
+                <?php echo $websiteErr?>
                 <br>
 
                 <br>
                 <label for="email">Email ID: </label>
                 <input type="text" name="emailId" class="email" placeholder="Email ID">
-                <span class="required">*</span>
+                <span class="required">*<?php echo $emailErr?></span>
                 <br>
 
                 <br>
@@ -193,7 +251,7 @@
             <li><a href="../html/about-us.html">Our Story </a></li>
             <li><a href="../html/privacy-policy.html">Privacy Policy </a></li>
             <li><a href="../html/terms-conditions.html">Terms and Conditions </a></li>
-            <li class="navbar-active"><a href="../html/order-portal.html">Order Pizza online</a></li>
+            <li class="navbar-active"><a href="../html/order-portal.php">Order Pizza online</a></li>
         </ul>
         <h5 style="color: white">2019 @ Mama cha Pizza. No rights reserved</h5>
     </footer>
